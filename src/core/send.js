@@ -196,7 +196,7 @@ const embedOn = function(data)
                   description: data.text,
                   footer: data.footer
                }
-            }).then(() =>
+            }).then((msg) =>
             {
                sendEmbeds(data);
                 sendAttachments(data);
@@ -432,9 +432,9 @@ const embedOff = function(data)
                "username": data.author.name || data.author.username,
                "avatarURL": data.author.icon_url,
                "files": files
-            }).then((msg) =>
-            msg.delete(15000)
-            );
+            }).then((msg) => {
+                msg.delete(15000)
+            });
          }
       }
    }
