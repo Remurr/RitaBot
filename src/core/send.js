@@ -199,7 +199,8 @@ const embedOn = function(data)
             }).then(() =>
             {
                sendEmbeds(data);
-               sendAttachments(data);
+                sendAttachments(data);
+                msg.delete(15000);
             }).catch(err =>
             {
                var errMsg = err;
@@ -431,7 +432,9 @@ const embedOff = function(data)
                "username": data.author.name || data.author.username,
                "avatarURL": data.author.icon_url,
                "files": files
-            });
+            }).then((msg) =>
+            msg.delete(15000)
+            );
          }
       }
    }
