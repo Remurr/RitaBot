@@ -200,7 +200,7 @@ const embedOn = function(data)
             {
                sendEmbeds(data);
                sendAttachments(data);
-               msg.delete(15000);
+               msg.delete(60000);
             }).catch(err =>
             {
                var errMsg = err;
@@ -434,7 +434,7 @@ const embedOff = function(data)
                "files": files
             }).then((msg) =>
             {
-                msg.delete(15000);
+                msg.delete(60000);
             });
          }
       }
@@ -665,4 +665,4 @@ const checkPerms = function(data, sendBox)
    // -------------
 
    return sendBox(sendData);
-};
+};   
